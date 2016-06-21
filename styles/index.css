@@ -270,7 +270,7 @@ footer {
     .banner_image {
         background-position: -50% 0%;
     }
-    .menuIcon_menu, .menuIcon_close {
+    nav .menuIcon {
         display: none;
     }
     nav .menu {
@@ -319,5 +319,11 @@ footer {
     .image img {
         width: 80%;
         height: 80%;
+    }
+}
+
+@media all and (min-width: 1440px) {
+    nav .container {
+        max-width: 100%;
     }
 }
