@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,900,300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+        <link rel="stylesheet" type="text/css" href="styles/index.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <nav>
+            <span><a href="#about">About</a></span>
+            <span><a href="#contact">Contact</a></span>
+            <span><a href="https://github.com/WycliffeAssociates/translationRecorder/releases" target="_blank">Download</a></span>
+        </nav>
+
+        <section class="banner">
+            <a name="home"></a>
+            <div class="container-fluid">
+                <h1>translationRecorder</h1>
+            </div>
+        </section>
+
+        <section class="about">
+            <a name="about"></a>
+            <div class="container">
+                <div class="content">
+                    <div class="image about_image">
+                        <img src="img/tk_hand_small.png" width="400" />
+                    </div>
+                    <div class="info about_info">
+                        <h2 class="info_title">What is it?</h2>
+                        <p class="info_par"><span class="keyword">translationRecorder</span> is an open source solution to oral Bible translation. Created as a part of the Five Weeks of Code project, it provides a simple way for a someone who has never used recording software to quickly begin translating the Bible into their heart language.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cost">
+            <div class="container">
+                <div class="content">
+                    <div class="image cost_image">
+                        <img src="img/open_source.png" width="400" />
+                    </div>
+                    <div class="info cost_info">
+                        <h2 class="info_title">How much is it?</h2>
+                        <p class="info_par">Because every part of <span class="keyword">translationRecorder</span> is open source, you can use it completely free of charge and anything you make with it can be distributed without asking permission from anyone.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="download">
+            <div class="container">
+                <div class="content">
+                    <div class="image download_image">
+                        <img src="img/android.png" width="320" />
+                    </div>
+                    <div class="info download_info">
+                        <h2 class="info_title">Where to get it?</h2>
+                        <p class="info_par"><span class="keyword">translationRecorder</span> is not currently on the GooglePlay Store, but you can download the APK for Android devices <a href="https://github.com/WycliffeAssociates/translationRecorder/releases" target="_blank">here</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <a name="contact"></a>
+            <div class="container">
+                <div class="content">
+                    <div class="info contact_info">
+                        <h2 class="info_title">Contact Us</h2>
+                        <p class="info_para">If you have questions, feel free to give us a shout!</p>
+                        <form class="contactForm" action="https://formspree.io/vleong2332@gmail.com" method="post">
+                            <label for="name" class="inputGroup">
+                                <span>Name</span>
+                                <input id="name" type="text" name="name" required />
+                            </label>
+                            <label for="email" class="inputGroup">
+                                <span>Email</span>
+                                <input id="email" type="email" name="_replyto" required />
+                            </label>
+                            <label for="phone" class="inputGroup">
+                                <span>Phone</span>
+                                <input id="phone" type="tel" name="phone" />
+                            </label>
+                            <label for="comment" class="inputGroup">
+                                <span>Comment</span>
+                                <textarea id="comment" name="comment" required></textarea>
+                            </label>
+                            <input type="hidden" name="_next" value="http://localhost:8080/translationRecorderWeb/index.html" />
+                            <input type="hidden" name="_subject" value="Contact from translationRecorder.com" />
+                            <input type="text" name="_gotcha" style="display:none" />
+                            <input id="submit" class="submit" type="submit" value="Submit" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            
+        </footer>
+
+
+        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script> -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<!--         <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script> -->
+    </body>
+</html>
