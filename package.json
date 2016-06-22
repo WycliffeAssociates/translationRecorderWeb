@@ -21,5 +21,15 @@
   "bugs": {
     "url": "https://github.com/WycliffeAssociates/translationRecorderWeb/issues"
   },
-  "homepage": "https://github.com/WycliffeAssociates/translationRecorderWeb#readme"
+  "homepage": "https://github.com/WycliffeAssociates/translationRecorderWeb#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
+    "merge-stream": "^1.0.0"
+  }
 }
