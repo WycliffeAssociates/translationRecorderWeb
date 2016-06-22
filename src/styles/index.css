@@ -91,7 +91,6 @@ nav .container {
 nav .logo {
     flex: 0 0 2.5rem;
     height: 2.5rem;
-    /*background-color: #FFF;*/
     background-image: url('../img/tr_logo_white.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -146,7 +145,6 @@ nav span a {
     flex: 0 0 auto;
     margin: 5% auto 0;
     font-size: 1.5rem;
-    /*font-weight: normal;*/
     letter-spacing: 3px;
 }
 .banner_image {
