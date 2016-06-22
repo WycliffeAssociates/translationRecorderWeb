@@ -309,12 +309,17 @@ footer {
     .container {
         max-width: 1440px;
     }
+    .banner .container {
+        max-width: 100%;
+    }
     .banner h1 {
         margin: 3% 8% 1%;
         font-size: 3.5rem;
     }
     .banner_image {
         flex: 1 1 500px;
+        background-size: 80%;
+        background-position: 40% 0%;
     }
     .image img {
         width: 80%;
