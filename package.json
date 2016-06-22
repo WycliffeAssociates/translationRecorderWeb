@@ -1,0 +1,25 @@
+{
+  "name": "translation-recorder-web",
+  "version": "1.0.0",
+  "description": "An informational website about translationRecorder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WycliffeAssociates/translationRecorderWeb.git"
+  },
+  "keywords": [
+    "bible",
+    "translation",
+    "audio",
+    "oral"
+  ],
+  "author": "Vicky Leong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WycliffeAssociates/translationRecorderWeb/issues"
+  },
+  "homepage": "https://github.com/WycliffeAssociates/translationRecorderWeb#readme"
+}
