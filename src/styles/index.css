@@ -104,8 +104,9 @@ nav .menuIcon {
     box-sizing: border-box;
     cursor: pointer;
 }
-nav .menuIcon img {
+nav .menuIcon svg {
     width: 100%;
+    height: 100%;
 }
 nav .menuIcon .menuIcon_close {
     display: none;
@@ -290,7 +291,6 @@ footer {
     }
     .image img {
         width: 100%;
-        height: 100%;
     }
     .info {
         flex: 1 1 60%;
@@ -321,7 +321,6 @@ footer {
     }
     .image img {
         width: 80%;
-        height: 80%;
     }
 }
 

@@ -1,6 +1,4 @@
-var fs = require('fs'),
-	path = require('path'),
-	merge = require('merge-stream'),
+var merge = require('merge-stream'),
 	gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	rename = require('gulp-rename'),
@@ -8,19 +6,18 @@ var fs = require('fs'),
 	imagemin = require('gulp-imagemin'),
 	cleanCSS = require('gulp-clean-css'),
 	autoprefixer = require('gulp-autoprefixer'),
-	realFavicon = require('gulp-real-favicon');
+	realFavicon = require('gulp-real-favicon'),
+    browserify = require('browserify'),
+    source = require('vinyl-source-stream'),
+    buffer = require('vinyl-buffer');
 
-var scriptsPath = 'src/scripts',
-	buildPath = 'build/scripts',
+var index = './src/scripts/index.js',
+	scripts = './src/scripts',
+	styles = './src/styles',
+	buildScripts = './build/scripts',
+	buildStyles = './build/styles',
+	buildImg = './build/img',
 	FAVICON_DATA_FILE = 'faviconData.json';
-
-function getFolders(dir) {
-    return fs.readdirSync(dir)
-      .filter(function(file) {
-        return fs.statSync(path.join(dir, file)).isDirectory();
-      });
-}
-
 
 
 gulp.task('default', ['watch']);
@@ -34,38 +31,22 @@ gulp.task('watch', [], function() {
 });
 
 gulp.task('scripts', function() {
-   var folders = getFolders(scriptsPath);
-
-   var tasks = folders.map(function(folder) {
-      return gulp.src(path.join(scriptsPath, folder, '/**/*.js'))
-        // concat into foldername.js
-        .pipe(concat(folder + '.js'))
-        // write to output
-        .pipe(gulp.dest(scriptsPath)) 
-        // minify
-        .pipe(uglify())    
-        // rename to folder.min.js
-        .pipe(rename(folder + '.min.js')) 
-        // write to output again
-        .pipe(gulp.dest(scriptsPath));    
-   });
-
-   // process all remaining files in scriptsPath root into main.js and main.min.js files
-   var root = gulp.src(path.join(scriptsPath, '/*.js'))
-        .pipe(concat('main.js'))
-        .pipe(gulp.dest(buildPath))
+    return browserify(index)
+        .bundle()
+        .pipe(source('main.js'))
+        .pipe(buffer())
+        .pipe(gulp.dest(buildScripts))
         .pipe(uglify())
         .pipe(rename('main.min.js'))
-        .pipe(gulp.dest(buildPath));
-
-   return merge(tasks, root);
+        .pipe(gulp.dest(buildScripts));
+    
 });
 
 gulp.task('styles', function() {
 	gulp.src('src/styles/*.css')
 		.pipe(autoprefixer({browsers: '> 1%'}))
 		.pipe(concat('main.css'))
-		.pipe(gulp.dest('build/styles'))
+		.pipe(gulp.dest(buildStyles))
 		.pipe(cleanCSS({
 			'compatibility': 'ie8',
 			'debug': true
@@ -73,13 +54,13 @@ gulp.task('styles', function() {
 			console.log(details.name + ': ' + details.stats.originalSize + ' to ' + details.stats.minifiedSize);
 		}))
 		.pipe(rename('main.min.css'))
-		.pipe(gulp.dest('build/styles'));
+		.pipe(gulp.dest(buildStyles));
 });
 
 gulp.task('img', function() {
 	gulp.src('src/img/*')
 		.pipe(imagemin())
-		.pipe(gulp.dest('build/img'));
+		.pipe(gulp.dest(buildImg));
 });
 
 

@@ -1,9 +1,14 @@
+var utils = require('./utils');
+
+
 document.addEventListener('DOMContentLoaded', function() {
 	
 	// Toggle menu when clicking the menu icon
 	document.querySelector('.menuIcon').addEventListener('click', toggleMenu);
 	// Close menu when clicking on the menu links
-	document.querySelectorAll('.menu span a').forEach(function(a) {
+
+	var menus = document.querySelectorAll('.menu span a');
+	Array.prototype.slice.call(menus).forEach(function(a) {
 		a.addEventListener('click', hideMenu);
 	});
 	
@@ -28,5 +33,5 @@ function toggleMenu() {
 }
 
 function dismissMenu (e) {
-	!closest(e.target, 'nav') && hideMenu();
+	!utils.closest(e.target, 'nav') && hideMenu();
 }
