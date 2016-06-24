@@ -1,4 +1,5 @@
-var merge = require('merge-stream'),
+var fs = require('fs');
+	merge = require('merge-stream'),
 	gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	rename = require('gulp-rename'),
