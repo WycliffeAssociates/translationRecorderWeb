@@ -64,6 +64,11 @@ a:hover {
     border-color: #A96382;
     color: #A96382;
 }
+.beta {
+    font-family: sans-serif;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
 
 
 /* Navigation */
