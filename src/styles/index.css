@@ -25,10 +25,10 @@ section .content {
 }
 .content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 .info {
-    flex: 1 1 100%;
+    flex: 1 0 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,10 +43,10 @@ section .content {
 }
 .info_title {
     text-align: center;
-    font-size: 150%;
+    font-size: 175%;
 }
 .info_par {
-    font-size: 100%;
+    font-size: 125%;
     line-height: 2;
 }
 .keyword, h1, h2 {
@@ -68,6 +68,18 @@ a:hover {
     font-family: sans-serif;
     letter-spacing: -1px;
     text-transform: uppercase;
+}
+.btn {
+    padding: 0.5rem 1.25rem;
+    color: #FFF;
+    background-color: #4CC8FF;
+    border-radius: 5px;
+    border-style: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.linkBtn {
+    border-bottom: none;
 }
 
 
@@ -191,6 +203,15 @@ a[name="about"] {
 
 
 /* Contact */
+.contact {
+    background-color: #F0F0F0;
+}
+.info.contact_training {
+    justify-content: flex-start;
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 3rem;
+    margin-bottom: 1rem;
+}
 .contactForm {
     display: flex;
     flex-direction: column;
@@ -292,18 +313,24 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-left: 10%;
+        padding-left: 20%;
+        padding-right: 20%;
+        order: 2;
     }
     .image img {
         width: 100%;
     }
     .info {
         flex: 1 1 60%;
+        order: 1;
+    }
+    .contact_training {
+        border-left: 1px solid #E0E0E0;
     }
     .cost_image {
         order: 2;
-        padding-right: 10%;
-        padding-left: 0;
+        padding-right: 20%;
+        padding-left: 20%;
     }
 }
 
@@ -311,6 +338,9 @@ footer {
 @media all and (min-width: 1024px) {
     .container {
         max-width: 1440px;
+    }
+    .content {
+        flex-direction: row;
     }
     .banner .container {
         max-width: 100%;
@@ -324,8 +354,35 @@ footer {
         background-size: 80%;
         background-position: 40% 0%;
     }
+    .image {
+        order: 0;
+        padding-left: 10%;
+        padding-right: 0;
+    }
     .image img {
         width: 80%;
+    }
+    .cost_image {
+        order: 2;
+        padding-left: 0;
+        padding-right: 10%;
+    }
+    .contact_info {
+        flex: 1 1 50%;
+        order: 0;
+    }
+    .info.contact_info {
+        flex: 1 1 50%;
+    }
+    .info.contact_training {
+        flex: 1 1 50%;
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        justify-content: center;
+    }
+    .contact_training .info_par {
+        text-align: center;
     }
 }
 
