@@ -29,24 +29,25 @@ gulp.task('watch', [], function() {
 	gulp.watch(['src/scripts/*.js'], ['scripts']);
 	gulp.watch(['src/styles/*.css'], ['styles']);
 	gulp.watch(['src/img/*'], ['img']);
+	gulp.watch(['src/*.html'], ['inject-favicon-markups']);
 });
 
 gulp.task('scripts', function() {
     return browserify(index)
         .bundle()
-        .pipe(source('main.js'))
+        .pipe(source('index.js'))
         .pipe(buffer())
         .pipe(gulp.dest(buildScripts))
         .pipe(uglify())
-        .pipe(rename('main.min.js'))
+        .pipe(rename('index.min.js'))
         .pipe(gulp.dest(buildScripts));
-    
+
 });
 
 gulp.task('styles', function() {
 	gulp.src('src/styles/*.css')
 		.pipe(autoprefixer({browsers: '> 1%'}))
-		.pipe(concat('main.css'))
+		.pipe(concat('index.css'))
 		.pipe(gulp.dest(buildStyles))
 		.pipe(cleanCSS({
 			'compatibility': 'ie8',
@@ -54,7 +55,7 @@ gulp.task('styles', function() {
 		}, function(details) {
 			console.log(details.name + ': ' + details.stats.originalSize + ' to ' + details.stats.minifiedSize);
 		}))
-		.pipe(rename('main.min.css'))
+		.pipe(rename('index.min.css'))
 		.pipe(gulp.dest(buildStyles));
 });
 
@@ -114,9 +115,9 @@ gulp.task('generate-favicon', function(done) {
 // this task whenever you modify a page. You can keep this task
 // as is or refactor your existing HTML pipeline.
 gulp.task('inject-favicon-markups', function() {
-	gulp.src(['*.html'])
+	gulp.src(['src/*.html'])
 		.pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
-		.pipe(gulp.dest('.'));
+		.pipe(gulp.dest('build/'));
 });
 
 // Check for updates on RealFaviconGenerator (think: Apple has just
